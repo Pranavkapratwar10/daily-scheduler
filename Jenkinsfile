@@ -30,7 +30,7 @@ pipeline {
 
             steps {
 
-                bat 'docker build -t daily-scheduler:latest .'
+                bat 'C:\\Users\\Pratik\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe build -t daily-scheduler:latest .'
 
             }
 
