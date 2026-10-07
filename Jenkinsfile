@@ -8,7 +8,7 @@ pipeline {
 
             steps {
 
-                bat 'python -m pip install -r requirements.txt'
+                bat 'C:\\Users\\Pratik\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -m pip install -r requirements.txt'
 
             }
 
@@ -19,7 +19,7 @@ pipeline {
 
             steps {
 
-                bat 'python -m pytest -v'
+                bat 'C:\\Users\\Pratik\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -m pytest -v'
 
             }
 
