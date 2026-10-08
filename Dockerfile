@@ -1,17 +1,13 @@
-__pycache__/
-*.py[cod]
+FROM python:3.11-slim
 
-.venv/
-venv/
-env/
+WORKDIR /app
 
-.pytest_cache/
+COPY requirements.txt .
 
-instance/
-*.db
+RUN pip install --no-cache-dir -r requirements.txt
 
-.vscode/
+COPY . .
 
-.env
+EXPOSE 5000
 
-.DS_Store
+CMD ["python", "app.py"]
