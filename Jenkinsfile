@@ -28,16 +28,26 @@ pipeline {
             }
         }
 
+        stage('Deploy Container') {
+            steps {
+                bat '''
+                C:\\Users\\Pratik\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe stop daily-scheduler || exit 0
+                C:\\Users\\Pratik\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe rm daily-scheduler || exit 0
+                C:\\Users\\Pratik\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe run -d --name daily-scheduler -p 5000:5000 daily-scheduler:latest
+                '''
+            }
+        }
+
     }
 
     post {
 
         success {
-            echo 'CI pipeline completed successfully!'
+            echo 'CI/CD pipeline completed successfully!'
         }
 
         failure {
-            echo 'CI pipeline failed. Check the logs.'
+            echo 'CI/CD pipeline failed. Check the logs.'
         }
 
     }
